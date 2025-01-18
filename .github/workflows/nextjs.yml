@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # Replace with the branch you’re deploying from
+      - main # Replace with the branch you're deploying from
 
 jobs:
   deploy:
@@ -14,10 +14,13 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install Dependencies
-        run: npm install  # Create the package-lock.json file
+        run: npm ci  # Make sure package-lock.json exists
 
       - name: Build Static Files
         run: npm run build
+
+      - name: List the contents of build directory
+        run: ls -alh ./out  # Optional: Check if the "out" directory exists after build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
