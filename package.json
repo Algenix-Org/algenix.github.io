@@ -9,8 +9,8 @@
     "deploy": "npm run build && gh-pages -d out"
   },
   "dependencies": {
-    "next": "14.2.23"
-    "react": "18.3.0"
+    "next": "14.2.23",
+    "react": "18.3.0",
     "react-dom": "18.3.0"
   },
   "devDependencies": {
