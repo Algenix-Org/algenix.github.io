@@ -1,0 +1,20 @@
+{
+  "name": "nextjs-github-pages",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start",
+    "deploy": "npm run build && gh-pages -d out"
+  },
+  "dependencies": {
+    "next": "13.x", // Or any version you're using
+    "react": "18.x",
+    "react-dom": "18.x"
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
+  },
+  "homepage": "https://<your-username>.github.io/<your-repo-name>"
+}
