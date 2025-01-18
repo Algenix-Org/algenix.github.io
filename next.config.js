@@ -1,7 +1,6 @@
-// next.config.js
+/** @type {import('next').NextConfig} */
 module.exports = {
   output: "export",
-  // Add the base path if the site is served from a subdirectory
-  basePath: "/https://github.com/Algenix-Org/algenix.github.io",
-  assetPrefix: "/https://github.com/Algenix-Org/algenix.github.io",
+  basePath: "/algenix.github.io", // Subdirectory for GitHub Pages
+  assetPrefix: "/algenix.github.io", // Prefix for static assets
 };
