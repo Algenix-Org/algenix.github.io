@@ -3,24 +3,25 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # Replace with the branch you're deploying from
+      - main # Your default branch
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write # Required to allow GITHUB_TOKEN to push to gh-pages
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
       - name: Install Dependencies
-        run: npm ci  # Make sure package-lock.json exists
+        run: npm ci # Requires package-lock.json to be committed
 
       - name: Build Static Files
-        run: npm run build
+        run: npm run build # Should run "next build && next export"
 
       - name: List the contents of build directory
-        run: ls -alh ./out  # Optional: Check if the "out" directory exists after build
+        run: ls -alh ./out # Optional: Verify "out" exists (Linux syntax for GitHub runners)
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
