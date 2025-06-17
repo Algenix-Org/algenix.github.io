@@ -1,0 +1,8 @@
+title: Algenix Project
+description: AI Agent SDK for GitHub Actions
+baseurl: "" # keep this empty if using algenix.github.io root domain
+url: "https://algenix.github.io"
+
+theme: minima
+plugins:
+  - jekyll-feed
